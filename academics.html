@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Programmes</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Top Blue Header */
+        .page-header {
+            background-color: #c0e8ff; /* Approximated light blue from image */
+            /* A subtle gradient and repeating pattern to match the image */
+            background-image: 
+                linear-gradient(to right, #b0e0ff, #c0e8ff 10%, #d0f0ff 25%, #d0f0ff 75%, #c0e8ff 90%, #b0e0ff),
+                repeating-radial-gradient(circle at 10% 20%, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 11px, rgba(255, 255, 255, 0.1) 12px),
+                repeating-radial-gradient(circle at 90% 80%, transparent, transparent 15px, rgba(255, 255, 255, 0.1) 16px, rgba(255, 255, 255, 0.1) 17px);
+            padding: 10px 20px;
+            border-top: 2px solid #333;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-header h1 {
+            color: #003366; /* Dark blue text from image */
+            font-size: 20px;
+            margin: 0;
+        }
+
+        /* Section Titles (Centered Blue Bars) */
+        .section-title {
+            background-color: #b0e0ff; /* Light grey-blue from image */
+            padding: 8px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 0;
+            border-top: 1px solid #333;
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+            text-transform: uppercase;
+        }
+
+        /* Main Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #333; /* Dark, fine borders */
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        /* Alternating row colors and red text in first column */
+        tbody tr:nth-child(odd) {
+            background-color: #f7fbff; /* Very subtle light blue-grey alternate tint */
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* Target the first column to have red text */
+        td:first-child {
+            color: #c00000; /* Darker red from image */
+            width: 20%; /* Setting a proportional width */
+        }
+
+        /* Vocational and Ad-on tables (blank grey cells) */
+        .blank-cell-col {
+            background-color: #d8e5ef; /* Grey-blue background for blank cells in last column */
+            text-align: center;
+            width: 5%;
+        }
+
+        /* Post Graduate table (M.Sc. multiple listings) */
+        .postgraduate-table td:nth-child(2) {
+            width: 80%; /* Width for the details column in PG */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="page-header">
+        <h1>Course Programmes</h1>
+    </header>
+
+    <div class="section-title">DEGREE LEVEL</div>
+    <table>
+        <tbody>
+            <tr>
+                <td>B.A</td>
+                <td>Political Science/Home Science, Hindi Literature/Sanskrit Literature, Philosophy/Psychology/Geography, History/English Literature, Sociology, Economics</td>
+            </tr>
+            <tr>
+                <td>B.Sc.</td>
+                <td>Physics, Chemistry, Botany, Zoology, Mathematics, Geology, Biotechnology, Computer Science, Anthropology, Microbiology.</td>
+            </tr>
+            <tr>
+                <td>B.Com</td>
+                <td>Plain or with Computer Application</td>
+            </tr>
+            <tr>
+                <td>B.C.A.</td>
+                <td>&mdash;</td>
+            </tr>
+            <tr>
+                <td>P.G.D.C.A.</td>
+                <td>&mdash;</td>
+            </tr>
+            <tr>
+                <td>D.C.A.</td>
+                <td>&mdash;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">VOCATIONAL COURSE ( U.G. LEVEL )</div>
+    <table class="vocational-table">
+        <tbody>
+            <tr>
+                <td>Industrial Fish & Fisheries</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Industrial Chemistry</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">AD-ON COURSES ( CERTIFICATE, DIPLOMA & ADVANCED DIPLOMA )</div>
+    <table class="adon-table">
+        <tbody>
+            <tr>
+                <td>Food Science & Quality Control</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Information Technology</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Instrument Maintenance</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Spoken English and Ceative Writing</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">POST GRADUATE COURSES</div>
+    <table class="postgraduate-table">
+        <tbody>
+            <tr>
+                <td>M.A.</td>
+                <td>Hindi, English, Sanskrit, Economics, Geography, Sociology, Political Science, History, Rural development, Master of Social Work (MSW).</td>
+            </tr>
+            <tr>
+                <td>M.Com</td>
+                <td>&mdash;</td>
+            </tr>
+            <tr>
+                <td>M.Sc.</td>
+                <td>Physics, Chemistry, Botany, Zoology, Mathematics</td>
+            </tr>
+            <tr>
+                <td>M.Sc.</td>
+                <td>Biotechnology</td>
+            </tr>
+            <tr>
+                <td>M.Sc.</td>
+                <td>Computer Science</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">WE ARE ALSO RUNNING CHIEF MINISTER&rsquo;S SKILL DEVELOPMENT PROGRAMON</div>
+    <table class="skill-table">
+        <tbody>
+            <tr>
+                <td>Banking and Accounting</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Electronics</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Information and Communication Technology</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+            <tr>
+                <td>Soft Skills</td>
+                <td class="blank-cell-col">&mdash;</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

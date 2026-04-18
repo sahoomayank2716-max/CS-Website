@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Dept | Blue & White Notifications</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Blue and White Tech Background */
+            background: url('https://images.unsplash.com/photo-1550741111-c80717d56a0d?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /* Subtle Blue Overlay to blend the background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(255, 255, 255, 0.4));
+            z-index: 1;
+        }
+
+        .notification-container {
+            position: relative;
+            z-index: 2;
+            width: 95%;
+            max-width: 650px;
+            max-height: 85vh;
+            /* White-based Glassmorphism */
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 40, 100, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        .notification-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .notification-container::-webkit-scrollbar-thumb {
+            background: #007bff;
+            border-radius: 10px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 1.5rem;
+        }
+
+        .page-header h1 {
+            color: #004a99; /* Deep Blue */
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 0.85rem;
+            color: #557fa7;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .notification-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Card Styling */
+        .card {
+            display: flex;
+            gap: 1.2rem;
+            background: #ffffff;
+            padding: 1.2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8f0;
+            border-left: 6px solid #007bff; /* Blue accent */
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+            border-color: #007bff;
+        }
+
+        /* Text Colors */
+        .card-content h3 {
+            font-size: 1.1rem;
+            color: #002d5a;
+            margin-bottom: 4px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        .timestamp {
+            display: block;
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #007bff; /* Primary Blue */
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            background: #f0f7ff;
+            color: #007bff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        /* Specific Status Colors */
+        .card.urgent {
+            border-left-color: #004a99;
+            background: #f8fbff;
+        }
+        
+        .card.urgent .card-icon {
+            background: #004a99;
+            color: #fff;
+        }
+
+        @media (max-width: 480px) {
+            .notification-container { padding: 1.2rem; }
+            .card-icon { width: 40px; height: 40px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+    
+    <main class="notification-container">
+        <header class="page-header">
+            <h1>CS Department</h1>
+            <p>Notification Portal</p>
+        </header>
+
+        <section class="notification-list">
+            
+            <div class="card urgent">
+                <div class="card-icon">i</div>
+                <div class="card-content">
+                    <span class="timestamp">CRITICAL UPDATE</span>
+                    <h3>Exam Form Deadline</h3>
+                    <p>Summer 2026 Semester exam form close till tuesday. Please fill your exam form as soon as possible.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <div class="card-content">
+                    <span class="timestamp">WORKSHOP</span>
+                    <h3>Introduction to Quantum Computing</h3>
+                    <p>Guest lecture by Dr. Aris tonight at 6 PM in the Main Seminar Hall. Open to all years.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <div class="card-content">
+                    <span class="timestamp">NETWORK_LOG</span>
+                    <h3>Wi-Fi Credentials Reset</h3>
+                    <p>The CS Lab Wi-Fi passwords have been updated. Collect the new keys from the HOD office.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">↗</div>
+                <div class="card-content">
+                    <span class="timestamp">CAREER</span>
+                    <h3>IBM Coding Challenge</h3>
+                    <p>Shortlisted candidates for the IBM BlueMix challenge have been notified via email. Check your inbox.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

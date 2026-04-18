@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Section</title>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0c0c0c;
+        color: #fff;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 50px;
+        background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1') no-repeat center/cover;
+        position: relative;
+    }
+
+    .container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.75);
+    }
+
+    .column {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        border-bottom: 2px solid #00aaff;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .info-item i {
+        font-size: 18px;
+        margin-right: 12px;
+        color: #ccc;
+    }
+
+    .info-text {
+        color: #ddd;
+        line-height: 1.5;
+    }
+
+    iframe {
+        width: 100%;
+        height: 250px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .social-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .social-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #ccc;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .social-list li:hover {
+        color: #00aaff;
+    }
+
+    .social-list i {
+        width: 20px;
+    }
+
+    @media(max-width: 900px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Address -->
+    <div class="column">
+        <h2>Address</h2>
+
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="info-text">
+                Govt. Digvijay Autonomous Postgraduate College,<br>
+                Kila Para, Rajnandgaon,<br>
+                Chhattisgarh, 491441
+            </div>
+        </div>
+
+        <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div class="info-text">(07744) 225036</div>
+        </div>
+
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div class="info-text">principal@digvijaycollege.com</div>
+        </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="column">
+        <h2>Find Us On Google Map</h2>
+
+        <iframe 
+            src="https://maps.google.com/maps?q=Govt.%20Digvijay%20Autonomous%20College%20Rajnandgaon&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            loading="lazy">
+        </iframe>
+    </div>
+
+    
+
+
+
+</body>
+</html>

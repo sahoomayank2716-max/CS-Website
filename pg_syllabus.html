@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department - Syllabus Download</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .download-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="download-card">
+    <h2>CS Department</h2>
+    <p>Select your course to download the latest syllabus</p>
+
+    <select id="courseSelect">
+        <option value="" disabled selected>-- Choose Course --</option>
+
+        <option value="https://drive.google.com/drive/folders/1p-hg0qD3PT8n9639wCNkIhXTW_-NJduK">
+            M.Sc Computer Science
+        </option>
+
+        <option value="https://drive.google.com/drive/folders/1Jo6ouCuo2uSuUQ4uFgsj414eZi0GDRS8">
+            PGDCA
+        </option>
+    </select>
+
+    <button onclick="downloadSyllabus()">Download Syllabus</button>
+
+    <div class="footer-note">
+        © 2026 Computer Science Portal
+    </div>
+</div>
+
+<script>
+function downloadSyllabus() {
+    const selectedValue = document.getElementById('courseSelect').value;
+
+    if (!selectedValue) {
+        alert("Please select a course first!");
+        return;
+    }
+
+    // Direct open (no popup issue)
+    window.open(selectedValue, "_blank");
+}
+</script>
+
+</body>
+</html>

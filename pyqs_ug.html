@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department - Syllabus Download</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Background image with overlay */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* Container Card */
+        .download-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Form Elements */
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="download-card">
+        <h2>CS Department</h2>
+        <p>Select your course to download the year-wise PYQs</p>
+        
+        <select id="courseSelect">
+            <option value="" disabled selected>-- Choose Course --</option>
+            <option value="bsc_pyqs.pdf">B.Sc Computer Science</option>
+            <option value="bca_pyqs.pdf">BCA</option>
+        </select>
+
+        <button onclick="downloadSyllabus()">Download </button>
+
+        <div class="footer-note">
+            © 2026 Computer Science Portal
+        </div>
+    </div>
+
+    <script>
+        function downloadSyllabus() {
+            const selectElement = document.getElementById('courseSelect');
+            const selectedValue = selectElement.value;
+
+            if (selectedValue === "") {
+                alert("Please select a course first!");
+                return;
+            }
+
+            // In a real scenario, this would trigger the file download
+            // For this demo, we'll just alert the action
+            alert("Starting download for: " + selectedValue);
+            
+            // Example of how to actually trigger a download:
+            // window.location.href = "/path/to/files/" + selectedValue;
+        }
+    </script>
+
+</body>
+</html>
